@@ -226,13 +226,15 @@ plot(multipolygon)
 
 In general, R will take care of defining the geometries for you. Usually you'll know to expect either points or polygons based on the nature of your data. For instance, traffic stops or schools will probably be stored as points, while school districts or election precincts will be polygons.
 
-Also in general, you might find polygons and multipolygons being used interchangeably. In this dataset all the precincts are labelled as multipolygons even though most of them could be polygons. As far as I know, this is fine. Multipolygon accepts a broader range of shapes and won't break if two precincts happen to be separated.
+Also in general, you might find polygons and multipolygons being used interchangeably. In this dataset all the precincts are labelled as multipolygons even though most of them could be polygons. As far as I know, this is fine. Multipolygon accepts a broader range of shapes and won't break if two regions happen to be separated.
+
+If you see your `geom` column contains `geometrycollection` objects, you're probably in trouble. That means the geometries contain both points and polygons and you may have made a mistake somewhere.
 
 What exactly are the numbers? These depend on your coordinate reference system, which we discuss below.
 
 ### Mapping
 
-sf is well-integrated with ggplot. This makes map-construction in R pretty easy, at least for simple plots.
+`sf` is well-integrated with ggplot. This makes map-construction in R pretty easy, at least for simple plots.
 
 ```{r}
 ggplot(sf_precincts) +
