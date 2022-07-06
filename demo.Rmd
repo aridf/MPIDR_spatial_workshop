@@ -113,10 +113,14 @@ BISG is more accurate as long as precincts are sufficiently homogeneous. In more
 ## Coding
 
 ```{r}
+# Set working directory
+# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
 # Load packages
 suppressPackageStartupMessages({
   library(tidyverse)
   library(tidycensus)
+  library(areal)
   library(nngeo)
   library(patchwork)
   library(sf)

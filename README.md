@@ -7,6 +7,7 @@ All presentation materials and code are in the Rmarkdown file `demo.Rmd`. To run
   * `tidyverse`
   * `tidycensus`
   * `sf`
+  * `areal`
   * `nngeo`
   * `patchwork`
   * `censusxy`
